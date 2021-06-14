@@ -7,6 +7,7 @@ const actions = {
   ERROR: 'error'
 }
 
+//const BASE_URL = '/';
 const BASE_URL = 'https://cors-anyway.herokuapp.com/https://search.torre.co/opportunities/_search/?';
 
 //const BASE_URL= 'https://cors-anyway.herokuapp.com/https://jobs.github.com/positions.json';
@@ -30,9 +31,7 @@ const FetchJobs = (params, page) => {
   useEffect(()=>{
     const cancelToken = axios.CancelToken.source();
     dispatch({ type: actions.MAKE_REQUEST })
-      axios.post(BASE_URL, 
-    {
-      'method': 'POST',
+      axios.post(BASE_URL, {'method': 'POST',
       'headers': {
         'Content-Type': 'application/json'
       },
