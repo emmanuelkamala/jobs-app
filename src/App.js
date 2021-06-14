@@ -1,9 +1,15 @@
+import fetchJobs from './fetchJobs';
+import { Container } from 'react-bootstrap';
 
 function App() {
+  const { jobs, loading, error } = fetchJobs();
+
   return (
-    <div className="App">
-      <h1>My Job Search App</h1>
-    </div>
+    <Container>
+      {loading && <h1>Loading...</h1>}
+      {error && <h1>Error: Failed to load data!</h1>}
+      <h1>{jobs.length}</h1>
+    </Container>
   );
 }
 
