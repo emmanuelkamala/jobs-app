@@ -1,8 +1,8 @@
-import fetchJobs from './fetchJobs';
+import FetchJobs from './FetchJobs';
 import { Container } from 'react-bootstrap';
 
 function App() {
-  const { jobs, loading, error } = fetchJobs();
+  const { jobs, loading, error } = FetchJobs();
 
   return (
     <Container>
