@@ -28,6 +28,7 @@ const FetchJobs = (params, page) => {
   const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true });
 
   useEffect(()=>{
+    const cancelToken = axios.CancelToken.source();
     dispatch({ type: actions.MAKE_REQUEST })
       axios.post(BASE_URL, 
     {
@@ -35,13 +36,19 @@ const FetchJobs = (params, page) => {
       'headers': {
         'Content-Type': 'application/json'
       },
+      cancelToken: cancelToken.token,
       params: { markdown: true, page: page, ...params }
     }).then(res => {
       dispatch({ type: actions.GET_DATA, payload: { jobs: res.data.results}})
       console.log(res.data);
     }).catch(e => {
+      if (axios.isCancel(e)) return
       dispatch({ type: actions.ERROR, payload: { error: 'Error fetching posts...!'}})
     })
+
+    return ()=>{
+      cancelToken.cancel();
+    }
   }, [params, page])
 
   return state;
