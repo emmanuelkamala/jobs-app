@@ -14,7 +14,7 @@ This is a project of building a Job Search App, where a user can search for remo
 
 ## Live link
 
-<a href="https://my-job-search-app.herokuapp.com/">Live Version</a>
+<a href="https://my-job-search-app.netlify.app/">Live Version</a>
 
 ## Getting Started
 
