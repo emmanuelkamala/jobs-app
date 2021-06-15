@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Users from './components/Users';
 import Profile from './components/Profile';
+import AuthNav from './components/auth-nav';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <li><Link to={'/profile'} className="nav-link">Profile</Link></li>
           <li><Link to={'/users'} className="nav-link">Users</Link></li>
         </ul>
+        <AuthNav />
       </nav>
         <Switch>
           <Route exact path='/' component={Home} />

@@ -23,18 +23,8 @@ function Job({ job }) {
           />
         </div>
         <Card.Text className="mr-5">
-          {/* <Button 
-            onClick={()=> setOpen(prevOpen => !prevOpen)}
-            variant="primary">
-              { open ? 'Hide Details' : 'More Details'}
-          </Button> */}
           <h3>More Details:</h3>{job.skills[0].experience}
         </Card.Text>
-        {/* <Collapse in={open}>
-          <div className="mt-4">
-            <ReactMarkdown source={job.skills.map((skill) => skill.experience.concat(', '))} />
-          </div>
-        </Collapse>  */}
       </Card.Body>
     </Card>
   )
