@@ -3,6 +3,7 @@ import Home from './components/Home';
 import Users from './components/Users';
 import Profile from './components/Profile';
 import AuthNav from './components/auth-nav';
+import ProtectedRoute from './components/protected-route';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       </nav>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/profile' component={Profile} />
+          <ProtectedRoute path='/profile' component={Profile} />
           <Route path='/users' component={Users} />
         </Switch>
       </div>
