@@ -8,10 +8,7 @@ const actions = {
   UPDATE_HAS_NEXT_PAGE: 'update-has-next-page'
 }
 
-//const BASE_URL = '/';
 const BASE_URL = 'https://cors-anyway.herokuapp.com/https://search.torre.co/opportunities/_search/?';
-
-//const BASE_URL= 'https://cors-anyway.herokuapp.com/https://jobs.github.com/positions.json';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -20,7 +17,7 @@ const reducer = (state, action) => {
     case actions.GET_DATA:
       return { ...state, loading: false, jobs: action.payload.jobs }
     case actions.ERROR:
-      return { loading: false, error: true, error: action.payload.error, jobs: [] }
+      return { loading: false, error: action.payload.error, jobs: [] }
     case actions.UPDATE_HAS_NEXT_PAGE:
       return { ...state, hasNextPage: action.payload.hasNextPage }
     default:

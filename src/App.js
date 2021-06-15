@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import FetchJobs from './FetchJobs';
 import { Container } from 'react-bootstrap';
 import Job from './components/Job';
 import JobPagination from './components/JobPagination';
+import FetchJobs from './components/FetchJobs';
 import SearchForm from './components/SearchForm';
+import Header from './components/Header';
 
 function App() {
   const [params, setParams] = useState({});
@@ -20,6 +21,8 @@ function App() {
   }
 
   return (
+    <>
+    <Header />
     <Container className="my-4">
       <h1 className="mb-4">Torre Job Search</h1>
       <SearchForm params={params} onParamChange={handleParamChange} />
@@ -31,6 +34,7 @@ function App() {
       })}
       <JobPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />
     </Container>
+    </>
   );
 }
 
