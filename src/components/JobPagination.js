@@ -18,4 +18,4 @@ function JobPagination({page, setPage, hasNextPage}) {
 )
 }
 
-export default JobPagination
+export default JobPagination;

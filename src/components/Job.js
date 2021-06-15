@@ -1,10 +1,6 @@
-import { useState } from 'react';
-import { Card, Badge, Button, Collapse } from 'react-bootstrap';
-import ReactMarkdown from 'react-markdown';
+import { Card, Badge } from 'react-bootstrap';
 
 function Job({ job }) {
-  const [open, setOpen] = useState(false);
-
   return (
     <Card className="mb-3">
       <Card.Body>
@@ -19,20 +15,26 @@ function Job({ job }) {
             <Badge variant="secondary" className="mr-2 mb-4">{job.type}</Badge>
             <Badge variant="secondary">{job.locations}</Badge>
           </div>
-          <img className="d-none d-md-block" height="70" alt={job.organizations[0].name} src={job.organizations[0].picture} />
+          <img 
+            className="d-none d-md-block" 
+            height="70" 
+            alt={job.organizations[0].name} 
+            src={job.organizations[0].picture} 
+          />
         </div>
-        <Card.Text>
-          <Button 
+        <Card.Text className="mr-5">
+          {/* <Button 
             onClick={()=> setOpen(prevOpen => !prevOpen)}
             variant="primary">
               { open ? 'Hide Details' : 'More Details'}
-          </Button>
+          </Button> */}
+          <h3>More Details:</h3>{job.skills[0].experience}
         </Card.Text>
-        <Collapse in={open}>
+        {/* <Collapse in={open}>
           <div className="mt-4">
             <ReactMarkdown source={job.skills.map((skill) => skill.experience.concat(', '))} />
           </div>
-        </Collapse> 
+        </Collapse>  */}
       </Card.Body>
     </Card>
   )
