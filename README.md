@@ -8,10 +8,9 @@ This is a project of building a Job Search App, where a user can search for remo
 ## Built With
 
 - ReactJS
-- NodeJS
-- Redux
 - Torre API
-- SASS
+- Bootstrap
+- Auth0
 
 ## Live link
 
@@ -25,26 +24,14 @@ Open your terminal or text editor and use next command
 
         cd jobs-app
 
-        ### In first terminal:
-
         Run 'yarn install' command to install package dependencies.
 
-        ### Then in second terminal:
-
-        cd server
-
-        run 'yarn install' command to install package dependencies
 
 ## Run the app
 
-### In first terminal
+### Open terminal
 
 yarn start
-
-### In second terminal
-
-- cd server
-- yarn start
 
 ### On the browser:
 
